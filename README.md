@@ -4,8 +4,10 @@ Transforms `assert.async.*` calls into `test-until` expressions that resolve whe
 
 ## Installation
 
+Assuming you're [already using Babel](http://babeljs.io/docs/setup/), install the Babel plugin *and the peer dependency* with your package manager of choice:
+
 ```sh
-$ npm install babel-plugin-chai-assert-async
+$ npm install babel-plugin-chai-assert-async test-until
 ```
 
 ## Usage

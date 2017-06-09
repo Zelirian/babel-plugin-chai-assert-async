@@ -2,6 +2,8 @@
 
 Transforms `assert.async.*` calls into `test-until` expressions that resolve when the assertion passes, preserving error messages for failed assertions.
 
+[![Build Status](https://travis-ci.org/BinaryMuse/babel-plugin-chai-assert-async.svg?branch=master)](https://travis-ci.org/BinaryMuse/babel-plugin-chai-assert-async)
+
 ## Installation
 
 Assuming you're [already using Babel](http://babeljs.io/docs/setup/), install the Babel plugin *and the peer dependency* with your package manager of choice:

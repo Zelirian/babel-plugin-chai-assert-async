@@ -1,0 +1,29 @@
+{
+  "name": "babel-plugin-chai-assert-async",
+  "version": "0.0.0",
+  "description": "",
+  "repository": "BinaryMuse/babel-plugin-chai-assert-async",
+  "author": "Michelle Tilley <michelle@michelletilley.net>",
+  "main": "lib/index.js",
+  "devDependencies": {
+    "babel-cli": "^6.4.5",
+    "babel-preset-es2015": "^6.3.13",
+    "chai": "^4.0.2",
+    "dedent-js": "^1.0.1",
+    "mocha": "^2.2.5",
+    "test-until": "^1.1.1"
+  },
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "babel src -d lib",
+    "test": "mocha --compilers js:babel-register test",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "babel",
+    "chai",
+    "assert",
+    "async",
+    "babel-plugin"
+  ]
+}

@@ -86,9 +86,17 @@ describe('setValueAsync', function() {
 
 In this case, if the async assertion fails, the original error message like "expected obj.val to equal 42" will be preserved.
 
-## Example
+If you want to pass a timeout to `test-until`, you can specify it as an argument to `async`:
 
-**In**
+```javascript
+await assert.async(100).equal(obj.val, 42)
+```
+
+## Examples
+
+**Basic**
+
+In
 
 ```js
 async function test() {
@@ -96,7 +104,7 @@ async function test() {
 }
 ```
 
-**Out**
+Out
 
 ```js
 "use strict";
@@ -112,5 +120,34 @@ async function test() {
       return fail(err);
     }
   });
+}
+```
+
+**With explicit timeout**
+
+In
+
+```js
+async function test() {
+  await assert.async(500).equal(thing, other);
+}
+```
+
+Out
+
+```js
+"use strict";
+
+import until from 'test-until';
+
+async function test() {
+  await until(async function (fail) {
+    try {
+      assert.equal(thing, other);
+      return true;
+    } catch (err) {
+      return fail(err);
+    }
+  }, 500);
 }
 ```

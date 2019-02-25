@@ -1,3 +1,5 @@
+import { addDefault } from '@babel/helper-module-imports'
+
 export default function({types: t, template}) {
   const generator = template(`
     UNTIL_FUNC(async fail => {
@@ -13,7 +15,7 @@ export default function({types: t, template}) {
   return {
     name: 'assert-async',
     visitor: {
-      CallExpression(path, state) {
+      CallExpression(path) {
         // assuming `assert.async.something(arg1, arg2)`
 
         // assert.async.something
@@ -59,7 +61,7 @@ export default function({types: t, template}) {
         path.replaceWith(generator({
           ASSERT_CALL: assertExpression,
           UNTIL_ARGS: asyncArgs,
-          UNTIL_FUNC: state.addImport('test-until', 'default', 'until'),
+          UNTIL_FUNC: addDefault(path, 'test-until', {nameHint: 'until'}),
         }));
       },
     },

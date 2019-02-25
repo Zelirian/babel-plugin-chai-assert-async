@@ -23,7 +23,7 @@
   "scripts": {
     "clean": "rm -rf lib",
     "build": "babel src -d lib",
-    "test": "mocha --require @babel/register test",
+    "test": "npm run prepublish && mocha --require @babel/register test",
     "prepublish": "npm run clean && npm run build"
   },
   "keywords": [

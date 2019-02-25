@@ -1,22 +1,29 @@
 {
-  "name": "babel-plugin-chai-assert-async",
-  "version": "0.1.0",
-  "description": "",
-  "repository": "BinaryMuse/babel-plugin-chai-assert-async",
+  "name": "@atom/babel-plugin-chai-assert-async",
+  "version": "1.0.0-0",
+  "description": "await assert.async()",
+  "repository": "atom/babel-plugin-chai-assert-async",
+  "license": "MIT",
   "author": "Michelle Tilley <michelle@michelletilley.net>",
   "main": "lib/index.js",
   "devDependencies": {
-    "babel-cli": "^6.4.5",
-    "babel-preset-es2015": "^6.3.13",
-    "chai": "^4.0.2",
-    "dedent-js": "^1.0.1",
-    "mocha": "^2.2.5",
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.3.4",
+    "@babel/preset-env": "7.3.4",
+    "@babel/register": "7.0.0",
+    "chai": "4.2.0",
+    "dedent-js": "1.0.1",
+    "mocha": "6.0.2",
     "test-until": "^1.1.1"
+  },
+  "peerDependencies": {
+    "@babel/core": "7.x",
+    "test-until": "1.x"
   },
   "scripts": {
     "clean": "rm -rf lib",
     "build": "babel src -d lib",
-    "test": "mocha --compilers js:babel-register test",
+    "test": "npm run prepublish && mocha --require @babel/register test",
     "prepublish": "npm run clean && npm run build"
   },
   "keywords": [
@@ -25,5 +32,8 @@
     "assert",
     "async",
     "babel-plugin"
-  ]
+  ],
+  "dependencies": {
+    "@babel/helper-module-imports": "7.0.0"
+  }
 }

@@ -2,14 +2,14 @@
 
 Transforms `assert.async.*` calls into `test-until` expressions that resolve when the assertion passes, preserving error messages for failed assertions.
 
-[![Build Status](https://travis-ci.org/BinaryMuse/babel-plugin-chai-assert-async.svg?branch=master)](https://travis-ci.org/BinaryMuse/babel-plugin-chai-assert-async)
+[![Build Status](https://travis-ci.org/atom/babel-plugin-chai-assert-async.svg?branch=master)](https://travis-ci.org/atom/babel-plugin-chai-assert-async)
 
 ## Installation
 
 Assuming you're [already using Babel](http://babeljs.io/docs/setup/), install the Babel plugin *and the peer dependency* with your package manager of choice:
 
 ```sh
-$ npm install babel-plugin-chai-assert-async test-until
+$ npm install @atom/babel-plugin-chai-assert-async test-until
 ```
 
 ## Usage
@@ -20,21 +20,21 @@ $ npm install babel-plugin-chai-assert-async test-until
 
 ```json
 {
-  "plugins": ["chai-assert-async"]
+  "plugins": ["@atom/babel-plugin-chai-assert-async"]
 }
 ```
 
 ### Via CLI
 
 ```sh
-$ babel --plugins chai-assert-async script.js
+$ babel --plugins @atom/babel-plugin-chai-assert-async script.js
 ```
 
 ### Via Node API
 
 ```javascript
 require("babel-core").transform("code", {
-  plugins: ["chai-assert-async"]
+  plugins: ["@atom/babel-plugin-chai-assert-async"]
 });
 ```
 

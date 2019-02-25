@@ -16,6 +16,10 @@
     "mocha": "6.0.2",
     "test-until": "^1.1.1"
   },
+  "peerDependencies": {
+    "@babel/core": "7.x",
+    "test-until": "1.x"
+  },
   "scripts": {
     "clean": "rm -rf lib",
     "build": "babel src -d lib",

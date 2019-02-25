@@ -1,8 +1,8 @@
 {
-  "name": "babel-plugin-chai-assert-async",
+  "name": "@atom/babel-plugin-chai-assert-async",
   "version": "0.1.0",
-  "description": "",
-  "repository": "BinaryMuse/babel-plugin-chai-assert-async",
+  "description": "await assert.async()",
+  "repository": "atom/babel-plugin-chai-assert-async",
   "author": "Michelle Tilley <michelle@michelletilley.net>",
   "main": "lib/index.js",
   "devDependencies": {

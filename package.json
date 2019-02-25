@@ -1,6 +1,6 @@
 {
   "name": "@atom/babel-plugin-chai-assert-async",
-  "version": "0.1.0",
+  "version": "1.0.0-0",
   "description": "await assert.async()",
   "repository": "atom/babel-plugin-chai-assert-async",
   "license": "MIT",

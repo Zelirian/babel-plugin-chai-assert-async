@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import {transform} from 'babel-core';
+import {transformSync} from '@babel/core';
 import dedent from 'dedent-js';
 
 const basic = {
@@ -12,7 +12,7 @@ const basic = {
   `,
 
   after: dedent`
-    import _until from 'test-until';
+    import _until from "test-until";
     describe('stuff', function () {
       it('should work', async function () {
         await _until(async fail => {
@@ -38,7 +38,7 @@ const withArgs = {
   `,
 
   after: dedent`
-    import _until from 'test-until';
+    import _until from "test-until";
     describe('stuff', function () {
       it('should work', async function () {
         await _until(async fail => {
@@ -75,21 +75,21 @@ describe('chai-assert-async', function() {
     it('transforms basic assertions', function() {
       const before = basic.before;
       const expected = basic.after;
-      const actual = transform(before, options).code;
+      const actual = transformSync(before, options).code;
       assert.equal(actual, expected);
     });
 
     it('transforms assertions with args passed to assert.async(...)', function() {
       const before = withArgs.before;
       const expected = withArgs.after;
-      const actual = transform(before, options).code;
+      const actual = transformSync(before, options).code;
       assert.equal(actual, expected);
     });
 
     it('errors if the expression is not `await`ed', function() {
       const before = withoutAwait.before;
       try {
-        transform(before, options).code;
+        transformSync(before, options).code;
         throw new Error('Should have thrown!');
       } catch (err) {
         assert.match(err.message, /assert\.async\.equal cannot be used as a statement.*did you forget to \'await\' it/);

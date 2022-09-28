@@ -1,4 +1,5 @@
-# babel-plugin-chai-assert-async
+##### Atom and all repositories under Atom will be archived on December 15, 2022. Learn more in our [official announcement](https://github.blog/2022-06-08-sunsetting-atom/)
+ # babel-plugin-chai-assert-async
 
 Transforms `assert.async.*` calls into `test-until` expressions that resolve when the assertion passes, preserving error messages for failed assertions.
 
